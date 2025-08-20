@@ -66,9 +66,9 @@ Test the /addSchool and /listSchools endpoints with example requests.
 
 ## Future Enhancements
 
-1)Add user authentication to manage schools securely.
-2)Implement pagination and filtering for the listSchools API.
-3)Integrate Google Maps API for better geolocation visualization.
-4)Add support for updating and deleting school records.
-5)Cache frequently accessed school data for performance improvements.
+- Add user authentication to manage schools securely.
+- Implement pagination and filtering for the listSchools API.
+ - Integrate Google Maps API for better geolocation visualization.
+- Add support for updating and deleting school records.
+- Cache frequently accessed school data for performance improvements.
 
