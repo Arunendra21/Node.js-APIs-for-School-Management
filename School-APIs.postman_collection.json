@@ -1,0 +1,98 @@
+{
+  "info": {
+    "name": "School Management APIs",
+    "_postman_id": "a7d3b2ec-6f0f-4747-9b9e-collection",
+    "description": "APIs to add schools and list schools sorted by proximity.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Add School",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"ABC Public School\",\n  \"address\": \"MG Road, Prayagraj\",\n  \"latitude\": 25.4358,\n  \"longitude\": 81.8463\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/addSchool",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "addSchool"
+          ]
+        },
+        "description": "Create a new school with validation."
+      },
+      "response": [
+        {
+          "name": "201 Created",
+          "originalRequest": {},
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "json",
+          "body": "{\n  \"message\": \"School added successfully\",\n  \"id\": 1,\n  \"school\": {\n    \"id\": 1,\n    \"name\": \"ABC Public School\",\n    \"address\": \"MG Road, Prayagraj\",\n    \"latitude\": 25.4358,\n    \"longitude\": 81.8463\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "List Schools by Proximity",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/listSchools?latitude={{latitude}}&longitude={{longitude}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "listSchools"
+          ],
+          "query": [
+            {
+              "key": "latitude",
+              "value": "{{latitude}}"
+            },
+            {
+              "key": "longitude",
+              "value": "{{longitude}}"
+            }
+          ]
+        },
+        "description": "Returns all schools sorted by distance (km) from the provided coordinates."
+      },
+      "response": [
+        {
+          "name": "200 OK",
+          "originalRequest": {},
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "body": "{\n  \"count\": 2,\n  \"data\": [\n    {\n      \"id\": 1,\n      \"name\": \"ABC Public School\",\n      \"address\": \"MG Road, Prayagraj\",\n      \"latitude\": 25.4358,\n      \"longitude\": 81.8463,\n      \"distance_km\": 0.0\n    },\n    {\n      \"id\": 2,\n      \"name\": \"XYZ Convent\",\n      \"address\": \"Civil Lines, Prayagraj\",\n      \"latitude\": 25.47,\n      \"longitude\": 81.87,\n      \"distance_km\": 4.25\n    }\n  ]\n}"
+        }
+      ]
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "latitude",
+      "value": "25.4358"
+    },
+    {
+      "key": "longitude",
+      "value": "81.8463"
+    }
+  ]
+}
