@@ -15,17 +15,17 @@ The project is ideal for applications that require geolocation-based school sear
 - Can be tested using Postman.
 
 ---
-Node.js-APIs-for-School-Management/
-│
-├── src/
-│   ├── controllers/       # Contains API logic for adding and listing schools
-│   ├── routes/            # Defines API endpoints
-│   ├── config/            # Database configuration and connection
-│   └── app.js             # Main application entry point
-│
-├── package.json            # Project metadata and dependencies
-├── package-lock.json
-└── README.md               # Project documentation
+## Node.js-APIs-for-School-Management/
+
+- ── src/
+-   ├── controllers/       # Contains API logic for adding and listing schools
+-   ├── routes/            # Defines API endpoints
+-   ├── config/            # Database configuration and connection
+-   └── app.js             # Main application entry point
+-
+- ── package.json            # Project metadata and dependencies
+- ── package-lock.json
+- ── README.md               # Project documentation
 
 
 
